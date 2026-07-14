@@ -1,0 +1,18 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "items3d:espada_v01",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/entity/espada_v01"
+      },
+      "geometry": {
+        "default": "geometry.items3d.espada_v01"
+      },
+      "render_controllers": ["controller.render.items3d.espada_v01"]
+    }
+  }
+}
