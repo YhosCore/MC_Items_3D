@@ -3,6 +3,7 @@
   "minecraft:attachable": {
     "description": {
       "identifier": "items3d:escudo_v01",
+      "item": "items3d:escudo_v01",
       "render_controllers": ["controller.render.item_default"],
       "materials": {
         "default": "entity_alphatest",
