@@ -18,15 +18,19 @@
       },
       "animations": {
         "first_person_hold": "animation.escudo_v01.first_person_hold",
-        "third_person_hold": "animation.escudo_v01.third_person_hold"
+        "third_person_hold": "animation.escudo_v01.third_person_hold",
+        "sneaking_hold": "animation.escudo_v01.sneaking_hold"
       },
       "scripts": {
         "animate": [
           {
-            "first_person_hold": "c.is_first_person"
+            "first_person_hold": "query.is_first_person && !query.is_sneaking"
           },
           {
-            "third_person_hold": "!c.is_first_person"
+            "third_person_hold": "!query.is_first_person && !query.is_sneaking"
+          },
+          {
+            "sneaking_hold": "query.is_sneaking"
           }
         ]
       }
