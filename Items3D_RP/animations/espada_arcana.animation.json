@@ -4,7 +4,7 @@
     "animation.items3d.espada_arcana.idle": {
       "loop": true,
       "bones": {
-        "root": {
+        "rightItem": {
           "rotation": [0, 0, 0]
         }
       }
@@ -13,7 +13,7 @@
       "animation_length": 0.35,
       "loop": false,
       "bones": {
-        "root": {
+        "rightItem": {
           "rotation": {
             "0.0": [0, 0, -22],
             "0.12": [35, 0, 28],

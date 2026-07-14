@@ -12,8 +12,14 @@
       },
       "bones": [
         {
-          "name": "root",
+          "name": "rightItem",
+          "pivot": [0, 0, 0]
+        },
+        {
+          "name": "blade",
+          "parent": "rightItem",
           "pivot": [0, 0, 0],
+          "rotation": [45, 0, 0],
           "cubes": [
             {
               "origin": [-1, 0, -1],
