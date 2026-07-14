@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.espada_v01.first_person_hold": {
+      "loop": true,
+      "bones": {
+        "root_item": {
+          "rotation": [385.6533, 59.4535, 223.3655],
+          "position": [3.8526, 23.15508, 7.26079]
+        }
+      }
+    },
+    "animation.espada_v01.3rd_person_hold": {
+      "loop": true,
+      "bones": {
+        "root_item": {
+          "rotation": [76.3028, 2.1832, 5.3522],
+          "position": [-0.09443, 21.64961, -1.42013],
+          "scale": [1.4, 1, 1]
+        }
+      }
+    }
+  }
+}

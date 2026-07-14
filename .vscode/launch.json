@@ -1,0 +1,13 @@
+{
+  "version": "0.3.0",
+  "configurations": [
+    {
+      "type": "minecraft-js",
+      "request": "attach",
+      "name": "Debug con Minecraft Bedrock",
+      "mode": "connect",
+      "localRoot": "${workspaceFolder}/Items3D_BP/",
+      "port": 19144
+    }
+  ]
+}
