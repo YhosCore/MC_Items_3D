@@ -2,7 +2,7 @@
 
 Addon base para Minecraft Bedrock enfocado en items 3D. Incluye una espada 3D exportada desde Blockbench llamada **Espada v01**.
 
-Version actual: 1.0.4. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.0.5. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Estructura
 
@@ -69,8 +69,8 @@ En `Items3D_RP/animations/espada_arcana.animation.json`:
 
 ## Como probar
 
-1. Importa `Addon_Items_3D_v1.0.4.mcaddon`.
-2. Activa `Items 3D BP v1.0.4` y `Items 3D RP v1.0.4`.
+1. Importa `Addon_Items_3D_v1.0.5.mcaddon`.
+2. Activa `Items 3D BP v1.0.5` y `Items 3D RP v1.0.5`.
 3. Activa Beta APIs/Script APIs si tu version de Minecraft lo solicita.
 4. Usa:
 

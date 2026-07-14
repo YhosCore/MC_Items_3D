@@ -5,17 +5,18 @@
       "loop": true,
       "bones": {
         "root_item": {
-          "rotation": [66, 60, -60],
-          "position": [3, 23, 4]
+          "rotation": [385.6533, 59.4535, 223.3655],
+          "position": [3.8526, 23.15508, 7.26079]
         }
       }
     },
-    "animation.espada_v01.third_person_hold": {
+    "animation.espada_v01.3rd_person_hold": {
       "loop": true,
       "bones": {
         "root_item": {
-          "rotation": [90, 0, 0],
-          "position": [0.5, 22.5, -0.5]
+          "rotation": [76.3028, 2.1832, 5.3522],
+          "position": [-0.09443, 21.64961, -1.42013],
+          "scale": [1.4, 1, 1]
         }
       }
     }

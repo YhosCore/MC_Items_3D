@@ -17,7 +17,7 @@
       },
       "animations": {
         "first_person_hold": "animation.espada_v01.first_person_hold",
-        "third_person_hold": "animation.espada_v01.third_person_hold"
+        "third_person_hold": "animation.espada_v01.3rd_person_hold"
       },
       "scripts": {
         "animate": [
