@@ -1,8 +1,8 @@
 # MC_Items_3D
 
-Addon base para Minecraft Bedrock enfocado en items 3D. Incluye una espada 3D exportada desde Blockbench llamada **Espada v01**.
+Addon base para Minecraft Bedrock enfocado en items 3D. Incluye una espada 3D exportada desde Blockbench y un escudo 3D base.
 
-Version actual: 1.1.0. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.2.0. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Estructura
 
@@ -10,6 +10,7 @@ Version actual: 1.1.0. Los archivos `.mcaddon` se exportan con version en el nom
 Items3D_BP/
   manifest.json
   items/
+    escudo_v01.json
     espada_v01.json
   scripts/
     main.js
@@ -26,19 +27,24 @@ Items3D_BP/
 Items3D_RP/
   manifest.json
   attachables/
+    escudo_v01.json
     espada_v01.json
   animations/
     attachables/
+      escudo_v01.animation.json
       espada_v01.animation.json
   models/
     entity/
+      escudo_v01.geo.json
       espada_v01.geo.json
   textures/
     item_texture.json
     items/
+      escudo_v01.png
       espada_v01.png
     entity/
       attachable/
+        escudo_v01.png
         espada_v01.png
   texts/
     es_MX.lang
@@ -63,6 +69,21 @@ Comando de prueba:
 /give @s items3d:espada_v01
 ```
 
+## Escudo v01
+
+- Identificador: `items3d:escudo_v01`
+- Tipo: escudo custom 3D/attachable.
+- Durabilidad: `336`
+- Reparacion: madera y lingote de hierro.
+- Offhand: preparado con `minecraft:allow_off_hand`.
+- Animacion: posicion personalizada de primera y tercera persona.
+
+Comando de prueba:
+
+```mcfunction
+/give @s items3d:escudo_v01
+```
+
 ## Archivos clave
 
 - `Items3D_BP/items/espada_v01.json`: define dano, durabilidad, reparacion, encantabilidad e icono.
@@ -76,13 +97,14 @@ Comando de prueba:
 
 ## Como probar
 
-1. Importa `Addon_Items_3D_v1.1.0.mcaddon`.
-2. Activa `Items 3D BP v1.1.0` y `Items 3D RP v1.1.0`.
+1. Importa `Addon_Items_3D_v1.2.0.mcaddon`.
+2. Activa `Items 3D BP v1.2.0` y `Items 3D RP v1.2.0`.
 3. Activa Beta APIs/Script APIs si tu version de Minecraft lo solicita.
 4. Usa:
 
 ```mcfunction
 /give @s items3d:espada_v01
+/give @s items3d:escudo_v01
 ```
 
 ## Para crecer
@@ -99,5 +121,5 @@ La regla principal: cada nuevo item debe tener nombre base consistente en BP, RP
 ## Empaquetar
 
 ```powershell
-.\tools\package-addon.ps1 -Version 1.1.0
+.\tools\package-addon.ps1 -Version 1.2.0
 ```

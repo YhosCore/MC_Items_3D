@@ -7,6 +7,7 @@ Este addon mantiene las carpetas que Minecraft Bedrock espera, pero organiza nom
 ```text
 Items3D_BP/
   items/
+    escudo_v01.json
     espada_v01.json
   scripts/
     main.js
@@ -34,19 +35,24 @@ Reglas:
 ```text
 Items3D_RP/
   attachables/
+    escudo_v01.json
     espada_v01.json
   animations/
     attachables/
+      escudo_v01.animation.json
       espada_v01.animation.json
   models/
     entity/
+      escudo_v01.geo.json
       espada_v01.geo.json
   textures/
     item_texture.json
     items/
+      escudo_v01.png
       espada_v01.png
     entity/
       attachable/
+        escudo_v01.png
         espada_v01.png
   texts/
     es_MX.lang
@@ -105,13 +111,13 @@ player.dimension.playSound("items3d.espada_fuego.slash", player.location);
 Cada export debe subir version:
 
 ```text
-Addon_Items_3D_v1.1.0.mcaddon
-Items 3D BP v1.1.0
-Items 3D RP v1.1.0
+Addon_Items_3D_v1.2.0.mcaddon
+Items 3D BP v1.2.0
+Items 3D RP v1.2.0
 ```
 
 Para empaquetar:
 
 ```powershell
-.\tools\package-addon.ps1 -Version 1.1.0
+.\tools\package-addon.ps1 -Version 1.2.0
 ```

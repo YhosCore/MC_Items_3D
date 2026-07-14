@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.escudo_v01.first_person_hold": {
+      "loop": true,
+      "bones": {
+        "root_item": {
+          "rotation": [12, -28, 4],
+          "position": [5.25, 18.5, 8.5],
+          "scale": [1.2, 1.2, 1.2]
+        }
+      }
+    },
+    "animation.escudo_v01.third_person_hold": {
+      "loop": true,
+      "bones": {
+        "root_item": {
+          "rotation": [82, 8, -8],
+          "position": [1.2, 20.5, -1.2],
+          "scale": [1.15, 1.15, 1.15]
+        }
+      }
+    }
+  }
+}

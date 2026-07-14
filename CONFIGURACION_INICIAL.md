@@ -29,6 +29,16 @@
 - Script: `Items3D_BP/scripts/items/weapons/espadaV01.js`
 - Registro de scripts: `Items3D_BP/scripts/items/index.js`
 
+## Escudo v01
+
+- Item: `items3d:escudo_v01`
+- Modelo 3D: `Items3D_RP/models/entity/escudo_v01.geo.json`
+- Textura en mano: `Items3D_RP/textures/entity/attachable/escudo_v01.png`
+- Icono: `Items3D_RP/textures/items/escudo_v01.png`
+- Attachable: `Items3D_RP/attachables/escudo_v01.json`
+- Animaciones: `Items3D_RP/animations/attachables/escudo_v01.animation.json`
+- Offhand: `minecraft:allow_off_hand`
+
 ## Atributos planeados
 
 - Dano base.
