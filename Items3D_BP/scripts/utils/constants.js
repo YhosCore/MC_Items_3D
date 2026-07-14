@@ -1,5 +1,5 @@
 export const ITEM_IDS = {
-  ARCANE_SWORD: "items3d:espada_arcana"
+  ARCANE_SWORD: "items3d:espada_v01"
 };
 
 export const ARCANE_SWORD_ATTRIBUTES = {

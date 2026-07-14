@@ -2,9 +2,6 @@
   "resource_pack_name": "items3d_rp",
   "texture_name": "atlas.items",
   "texture_data": {
-    "items3d:espada_arcana": {
-      "textures": "textures/items/espada_arcana"
-    },
     "items3d:espada_v01": {
       "textures": "textures/items/espada_v01"
     }
