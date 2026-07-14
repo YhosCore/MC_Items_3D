@@ -12,29 +12,22 @@
 - Mantener BP y RP separados.
 - Mostrar version en `header.name`, `header.description` y `header.version`.
 - Exportar solo el `.mcaddon` mas reciente.
-- Crear estructura modular desde el inicio.
+- Mantener icono de inventario y textura 3D en rutas separadas.
+- Usar el `.geo.json` para geometria, no como textura.
+- Guardar animaciones de primera y tercera persona en `animations/attachables/`.
 - Validar JSON y scripts antes de empaquetar.
-- Documentar comandos de prueba y atributos ajustables.
+- Empaquetar `.mcaddon` con rutas internas `/`, estilo Blockbench.
 
-## Versionado
+## Espada v01
 
-Ejemplo:
-
-```json
-{
-  "name": "Items 3D BP v1.0.0",
-  "description": "Version 1.0.0 - Paquete de comportamiento para items 3D.",
-  "version": [1, 0, 0]
-}
-```
-
-## Espada Arcana
-
-- Item: `items3d:espada_arcana`
-- Modelo 3D: `Items3D_RP/models/entity/espada_arcana.geo.json`
-- Attachable: `Items3D_RP/attachables/espada_arcana.json`
-- Animaciones: `Items3D_RP/animations/espada_arcana.animation.json`
-- Script: `Items3D_BP/scripts/items/arcaneSword.js`
+- Item: `items3d:espada_v01`
+- Modelo 3D: `Items3D_RP/models/entity/espada_v01.geo.json`
+- Textura en mano: `Items3D_RP/textures/entity/attachable/espada_v01.png`
+- Icono: `Items3D_RP/textures/items/espada_v01.png`
+- Attachable: `Items3D_RP/attachables/espada_v01.json`
+- Animaciones: `Items3D_RP/animations/attachables/espada_v01.animation.json`
+- Script: `Items3D_BP/scripts/items/weapons/espadaV01.js`
+- Registro de scripts: `Items3D_BP/scripts/items/index.js`
 
 ## Atributos planeados
 

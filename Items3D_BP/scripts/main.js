@@ -1,5 +1,4 @@
 import { world } from "@minecraft/server";
-import { handleArcaneSwordHit, handleArcaneSwordUse } from "./items/arcaneSword.js";
+import { registerItemSystems } from "./items/index.js";
 
-world.afterEvents.itemUse.subscribe(handleArcaneSwordUse);
-world.afterEvents.entityHitEntity.subscribe(handleArcaneSwordHit);
+registerItemSystems(world);

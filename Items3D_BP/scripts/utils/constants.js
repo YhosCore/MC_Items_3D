@@ -1,10 +1,14 @@
 export const ITEM_IDS = {
-  ARCANE_SWORD: "items3d:espada_v01"
+  ESPADA_V01: "items3d:espada_v01"
 };
 
-export const ARCANE_SWORD_ATTRIBUTES = {
-  bonusDamage: 2,
-  knockbackStrength: 0.35,
-  slashCooldownTicks: 12,
-  particleId: "minecraft:enchanting_table_particle"
+export const WEAPON_ATTRIBUTES = {
+  ESPADA_V01: {
+    bonusDamage: 2,
+    knockbackStrength: 0.35,
+    knockbackVertical: 0.12,
+    slashCooldownTicks: 12,
+    cooldownKey: "espada_v01_slash",
+    particleId: "minecraft:enchanting_table_particle"
+  }
 };

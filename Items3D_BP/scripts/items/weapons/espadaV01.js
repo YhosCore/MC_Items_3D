@@ -1,23 +1,30 @@
-import { isOnCooldown } from "../core/cooldowns.js";
-import { ARCANE_SWORD_ATTRIBUTES, ITEM_IDS } from "../utils/constants.js";
-import { getSelectedItem } from "../utils/inventory.js";
+import { isOnCooldown } from "../../core/cooldowns.js";
+import { ITEM_IDS, WEAPON_ATTRIBUTES } from "../../utils/constants.js";
+import { getSelectedItem } from "../../utils/inventory.js";
 
-export function handleArcaneSwordUse(event) {
+const CONFIG = WEAPON_ATTRIBUTES.ESPADA_V01;
+
+export function registerEspadaV01(world) {
+  world.afterEvents.itemUse.subscribe(handleUse);
+  world.afterEvents.entityHitEntity.subscribe(handleHit);
+}
+
+function handleUse(event) {
   const player = event.source;
   const item = event.itemStack;
 
-  if (!player || player.typeId !== "minecraft:player" || item?.typeId !== ITEM_IDS.ARCANE_SWORD) {
+  if (!player || player.typeId !== "minecraft:player" || item?.typeId !== ITEM_IDS.ESPADA_V01) {
     return;
   }
 
-  if (isOnCooldown(player, "arcane_sword_slash", ARCANE_SWORD_ATTRIBUTES.slashCooldownTicks)) {
+  if (isOnCooldown(player, CONFIG.cooldownKey, CONFIG.slashCooldownTicks)) {
     return;
   }
 
-  spawnArcaneParticles(player);
+  spawnWeaponParticles(player);
 }
 
-export function handleArcaneSwordHit(event) {
+function handleHit(event) {
   const player = event.damagingEntity;
   const target = event.hitEntity;
 
@@ -26,18 +33,18 @@ export function handleArcaneSwordHit(event) {
   }
 
   const heldItem = getSelectedItem(player);
-  if (heldItem?.typeId !== ITEM_IDS.ARCANE_SWORD) {
+  if (heldItem?.typeId !== ITEM_IDS.ESPADA_V01) {
     return;
   }
 
   applyBonusDamage(player, target);
   pushTargetAway(player, target);
-  spawnArcaneParticles(target);
+  spawnWeaponParticles(target);
 }
 
 function applyBonusDamage(player, target) {
   try {
-    target.applyDamage(ARCANE_SWORD_ATTRIBUTES.bonusDamage, {
+    target.applyDamage(CONFIG.bonusDamage, {
       cause: "entityAttack",
       damagingEntity: player
     });
@@ -55,17 +62,17 @@ function pushTargetAway(player, target) {
     target.applyKnockback(
       dx / length,
       dz / length,
-      ARCANE_SWORD_ATTRIBUTES.knockbackStrength,
-      0.12
+      CONFIG.knockbackStrength,
+      CONFIG.knockbackVertical
     );
   } catch {
     // Knockback is a bonus behavior; attacks still work without it.
   }
 }
 
-function spawnArcaneParticles(entity) {
+function spawnWeaponParticles(entity) {
   try {
-    entity.dimension.spawnParticle(ARCANE_SWORD_ATTRIBUTES.particleId, {
+    entity.dimension.spawnParticle(CONFIG.particleId, {
       x: entity.location.x,
       y: entity.location.y + 1,
       z: entity.location.z

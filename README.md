@@ -2,7 +2,7 @@
 
 Addon base para Minecraft Bedrock enfocado en items 3D. Incluye una espada 3D exportada desde Blockbench llamada **Espada v01**.
 
-Version actual: 1.0.9. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.1.0. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Estructura
 
@@ -10,67 +10,74 @@ Version actual: 1.0.9. Los archivos `.mcaddon` se exportan con version en el nom
 Items3D_BP/
   manifest.json
   items/
+    espada_v01.json
   scripts/
+    main.js
+    core/
+      cooldowns.js
+    items/
+      index.js
+      weapons/
+        espadaV01.js
+    utils/
+      constants.js
+      inventory.js
 
 Items3D_RP/
   manifest.json
   attachables/
+    espada_v01.json
   animations/
-  animation_controllers/
+    attachables/
+      espada_v01.animation.json
   models/
-  render_controllers/
+    entity/
+      espada_v01.geo.json
   textures/
+    item_texture.json
+    items/
+      espada_v01.png
+    entity/
+      attachable/
+        espada_v01.png
   texts/
+    es_MX.lang
+    en_US.lang
 ```
 
-## Item inicial
+## Espada v01
 
-### Espada Arcana
-
-- Identificador: `items3d:espada_arcana`
+- Identificador: `items3d:espada_v01`
 - Tipo: espada custom con item 3D/attachable.
-- Daño base: `7`
-- Daño extra por script: `2`
-- Durabilidad: `640`
-- Reparacion: fragmento de amatista.
+- Dano base: `7`
+- Dano extra por script: `2`
+- Durabilidad: `251`
+- Reparacion: lingote de hierro.
 - Encantabilidad: tipo espada.
-- Efecto visual: particulas arcanas al usar o golpear.
-- Animacion: `slash` al usar el item como prueba visual.
+- Efecto visual: particulas al usar o golpear.
+- Animacion: posicion personalizada de primera y tercera persona.
 
 Comando de prueba:
 
 ```mcfunction
-/give @s items3d:espada_arcana
+/give @s items3d:espada_v01
 ```
 
-## Atributos que podemos ajustar
+## Archivos clave
 
-En `Items3D_BP/items/espada_arcana.json`:
-
-- `minecraft:damage`: dano base del arma.
-- `minecraft:durability.max_durability`: durabilidad maxima.
-- `minecraft:enchantable.value`: calidad de encantamiento.
-- `minecraft:repairable.repair_items`: materiales que reparan la espada.
-- `minecraft:cooldown.duration`: tiempo de espera para uso.
-- `minecraft:use_modifiers.use_duration`: duracion de la accion de uso.
-
-En `Items3D_BP/scripts/utils/constants.js`:
-
-- `bonusDamage`: dano extra aplicado por script.
-- `knockbackStrength`: empuje extra al golpear.
-- `slashCooldownTicks`: cooldown del efecto de slash.
-- `particleId`: particula que aparece al usar/golpear.
-
-En `Items3D_RP/animations/espada_arcana.animation.json`:
-
-- Rotaciones del hueso `root`.
-- Duracion de la animacion.
-- Forma del movimiento de ataque.
+- `Items3D_BP/items/espada_v01.json`: define dano, durabilidad, reparacion, encantabilidad e icono.
+- `Items3D_BP/scripts/items/weapons/espadaV01.js`: define efectos por script al usar/golpear.
+- `Items3D_BP/scripts/items/index.js`: registra todos los modulos de items.
+- `Items3D_RP/attachables/espada_v01.json`: conecta item, modelo, textura y animaciones.
+- `Items3D_RP/models/entity/espada_v01.geo.json`: define la geometria del modelo 3D.
+- `Items3D_RP/textures/entity/attachable/espada_v01.png`: textura del modelo en mano.
+- `Items3D_RP/textures/items/espada_v01.png`: icono del inventario.
+- `Items3D_RP/animations/attachables/espada_v01.animation.json`: primera y tercera persona.
 
 ## Como probar
 
-1. Importa `Addon_Items_3D_v1.0.9.mcaddon`.
-2. Activa `Items 3D BP v1.0.9` y `Items 3D RP v1.0.9`.
+1. Importa `Addon_Items_3D_v1.1.0.mcaddon`.
+2. Activa `Items 3D BP v1.1.0` y `Items 3D RP v1.1.0`.
 3. Activa Beta APIs/Script APIs si tu version de Minecraft lo solicita.
 4. Usa:
 
@@ -78,12 +85,19 @@ En `Items3D_RP/animations/espada_arcana.animation.json`:
 /give @s items3d:espada_v01
 ```
 
-## Recomendacion para modelado
+## Para crecer
 
-Para mejorar el modelo 3D, usa Blockbench:
+Lee:
 
-1. Crea un modelo Bedrock.
-2. Exporta la geometria como `.geo.json`.
-3. Reemplaza `Items3D_RP/models/entity/espada_arcana.geo.json`.
-4. Exporta la textura a `Items3D_RP/textures/entity/espada_arcana_3d.png`.
-5. Ajusta animaciones en `Items3D_RP/animations/espada_arcana.animation.json`.
+```text
+docs/ESTRUCTURA.md
+docs/NUEVO_ITEM.md
+```
+
+La regla principal: cada nuevo item debe tener nombre base consistente en BP, RP, texturas, modelo, animaciones y script.
+
+## Empaquetar
+
+```powershell
+.\tools\package-addon.ps1 -Version 1.1.0
+```
