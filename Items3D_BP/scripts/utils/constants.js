@@ -1,5 +1,6 @@
 export const ITEM_IDS = {
-  ESPADA_V01: "items3d:espada_v01"
+  ESPADA_V01: "items3d:espada_v01",
+  ESCUDO_V01: "items3d:escudo_v01"
 };
 
 export const WEAPON_ATTRIBUTES = {
@@ -10,5 +11,17 @@ export const WEAPON_ATTRIBUTES = {
     slashCooldownTicks: 12,
     cooldownKey: "espada_v01_slash",
     particleId: "minecraft:enchanting_table_particle"
+  }
+};
+
+export const SHIELD_ATTRIBUTES = {
+  ESCUDO_V01: {
+    durabilityDamage: 1,
+    blockSound: "item.shield.block",
+    breakSound: "random.break",
+    particleId: "minecraft:basic_crit_particle",
+    projectileBlockRadius: 2,
+    attackerKnockbackStrength: 1.25,
+    attackerKnockbackVertical: 0.45
   }
 };

@@ -1,5 +1,5 @@
 {
-  "format_version": "1.20.80",
+  "format_version": "1.21.10",
   "minecraft:item": {
     "description": {
       "identifier": "items3d:escudo_v01",
@@ -15,8 +15,21 @@
       "minecraft:icon": "items3d:escudo_v01",
       "minecraft:max_stack_size": 1,
       "minecraft:allow_off_hand": true,
+      "minecraft:hand_equipped": false,
+      "tag:minecraft:is_shield": {},
+      "minecraft:enchantable": {
+        "slot": "shield",
+        "value": 10
+      },
+      "minecraft:custom_components": [
+        "items3d:manual_shield_durability"
+      ],
       "minecraft:durability": {
-        "max_durability": 336
+        "max_durability": 336,
+        "damage_chance": {
+          "min": 100,
+          "max": 100
+        }
       },
       "minecraft:repairable": {
         "repair_items": [
@@ -29,6 +42,24 @@
             "repair_amount": 112
           }
         ]
+      },
+      "minecraft:render_offsets": {
+        "main_hand": {
+          "third_person": {
+            "scale": [0.016, 0.016, 0.016]
+          },
+          "first_person": {
+            "scale": [0.00608, 0.00608, 0.00608]
+          }
+        },
+        "off_hand": {
+          "third_person": {
+            "scale": [0.016, 0.016, 0.016]
+          },
+          "first_person": {
+            "scale": [0.00608, 0.00608, 0.00608]
+          }
+        }
       }
     }
   }

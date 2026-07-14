@@ -15,6 +15,8 @@ Items3D_BP/
       cooldowns.js
     items/
       index.js
+      shields/
+        escudoV01.js
       weapons/
         espadaV01.js
     utils/
@@ -27,6 +29,7 @@ Reglas:
 - Cada item jugable tiene un JSON en `Items3D_BP/items/`.
 - Cada comportamiento con script vive en `Items3D_BP/scripts/items/`.
 - Los items de arma van en `scripts/items/weapons/`.
+- Los escudos van en `scripts/items/shields/`.
 - `scripts/items/index.js` registra todos los modulos de items.
 - `scripts/main.js` solo arranca sistemas, no debe llenarse de logica.
 
@@ -119,5 +122,5 @@ Items 3D RP v1.2.0
 Para empaquetar:
 
 ```powershell
-.\tools\package-addon.ps1 -Version 1.2.7
+.\tools\package-addon.ps1 -Version 1.2.9
 ```

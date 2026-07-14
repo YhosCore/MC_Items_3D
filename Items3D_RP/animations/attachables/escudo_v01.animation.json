@@ -4,7 +4,7 @@
     "animation.escudo_v01.first_person_hold": {
       "loop": true,
       "bones": {
-        "bone": {
+        "shield": {
           "rotation": [78, 43, -18],
           "position": [2.5, 20.5, 3.5],
           "scale": [0.65, 0.65, 0.65]
@@ -14,7 +14,7 @@
     "animation.escudo_v01.third_person_hold": {
       "loop": true,
       "bones": {
-        "bone": {
+        "shield": {
           "rotation": [39.1686, 74.0421, 38.0706],
           "position": [-3.57821, 13.77352, 0.56185],
           "scale": [1.4, 1.4, 1.1]
@@ -24,7 +24,7 @@
     "animation.escudo_v01.sneaking_hold": {
       "loop": true,
       "bones": {
-        "bone": {
+        "shield": {
           "rotation": [10, 0, 0],
           "position": [0, 13.37768, -1.68309],
           "scale": [1.4, 1.4, 1.1]

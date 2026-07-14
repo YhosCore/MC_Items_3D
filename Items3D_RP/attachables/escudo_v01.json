@@ -17,21 +17,40 @@
         "default": "geometry.escudo_v01"
       },
       "animations": {
-        "first_person_hold": "animation.escudo_v01.first_person_hold",
-        "third_person_hold": "animation.escudo_v01.third_person_hold",
-        "sneaking_hold": "animation.escudo_v01.sneaking_hold"
+        "wield": "controller.animation.shield.wield",
+        "wield_main_hand_first_person": "animation.shield.wield_main_hand_first_person",
+        "wield_off_hand_first_person": "animation.shield.wield_off_hand_first_person",
+        "wield_first_person_block": "animation.shield.wield_first_person_blocking",
+        "wield_main_hand_first_person_block": "animation.shield.wield_main_hand_first_person_blocking",
+        "wield_off_hand_first_person_block": "animation.shield.wield_off_hand_first_person_blocking",
+        "wield_third_person": "animation.shield.wield_third_person",
+        "fallback_first_person_hold": "animation.escudo_v01.first_person_hold",
+        "fallback_third_person_hold": "animation.escudo_v01.third_person_hold",
+        "fallback_sneaking_hold": "animation.escudo_v01.sneaking_hold"
       },
       "scripts": {
+        "initialize": [
+          "variable.main_hand_first_person_pos_x = 5.3;",
+          "variable.main_hand_first_person_pos_y = 26.0;",
+          "variable.main_hand_first_person_pos_z = 0.4;",
+          "variable.main_hand_first_person_rot_x = 91.0;",
+          "variable.main_hand_first_person_rot_y = 65.0;",
+          "variable.main_hand_first_person_rot_z = -43.0;",
+          "variable.off_hand_first_person_pos_x = -13.5;",
+          "variable.off_hand_first_person_pos_y = -5.8;",
+          "variable.off_hand_first_person_pos_z = 5.1;",
+          "variable.off_hand_first_person_with_bow_pos_z = -25.0;",
+          "variable.off_hand_first_person_rot_x = 1.0;",
+          "variable.off_hand_first_person_rot_y = 176.0;",
+          "variable.off_hand_first_person_rot_z = -2.5;"
+        ],
+        "pre_animation": [
+          "variable.is_blocking_main_hand = query.blocking && !query.is_item_name_any('slot.weapon.offhand', 'items3d:escudo_v01') && query.is_item_name_any('slot.weapon.mainhand', 'items3d:escudo_v01');",
+          "variable.is_blocking_off_hand = query.blocking && query.is_item_name_any('slot.weapon.offhand', 'items3d:escudo_v01');",
+          "variable.is_using_bow = (query.get_equipped_item_name == 'bow') && (query.main_hand_item_use_duration > 0.0f);"
+        ],
         "animate": [
-          {
-            "first_person_hold": "query.is_first_person && !query.is_sneaking"
-          },
-          {
-            "third_person_hold": "!query.is_first_person && !query.is_sneaking"
-          },
-          {
-            "sneaking_hold": "query.is_sneaking"
-          }
+          "wield"
         ]
       }
     }
