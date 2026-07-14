@@ -1,30 +1,30 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Items 3D BP v1.0.8",
-    "description": "Version 1.0.8 - Paquete de comportamiento para items 3D.",
+    "name": "Items 3D BP v1.0.9",
+    "description": "Version 1.0.9 - Paquete de comportamiento para items 3D.",
     "uuid": "71c75069-84f9-498c-a3bc-744a03ca14f3",
-    "version": [1, 0, 8],
+    "version": [1, 0, 9],
     "min_engine_version": [1, 20, 80]
   },
   "modules": [
     {
       "type": "data",
       "uuid": "041fe77d-e35b-4b71-b0e5-5d53ac56b919",
-      "version": [1, 0, 8]
+      "version": [1, 0, 9]
     },
     {
       "type": "script",
       "language": "javascript",
       "entry": "scripts/main.js",
       "uuid": "ad9ca41e-4455-45de-9239-d9ad6a55f333",
-      "version": [1, 0, 8]
+      "version": [1, 0, 9]
     }
   ],
   "dependencies": [
     {
       "uuid": "f523758b-72a7-4c20-96b1-bef9967a533c",
-      "version": [1, 0, 8]
+      "version": [1, 0, 9]
     },
     {
       "module_name": "@minecraft/server",
