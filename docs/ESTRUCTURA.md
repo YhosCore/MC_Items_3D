@@ -122,5 +122,5 @@ Items 3D RP v1.2.0
 Para empaquetar:
 
 ```powershell
-.\tools\package-addon.ps1 -Version 1.2.9
+.\tools\package-addon.ps1 -Version 1.2.10
 ```
