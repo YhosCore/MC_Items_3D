@@ -2,7 +2,7 @@
 
 Addon base para Minecraft Bedrock enfocado en items 3D. Incluye una espada 3D exportada desde Blockbench y un escudo 3D base.
 
-Version actual: 1.2.13. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
+Version actual: 1.2.22. Los archivos `.mcaddon` se exportan con version en el nombre y los packs muestran la version en Minecraft.
 
 ## Estructura
 
@@ -100,8 +100,8 @@ Comando de prueba:
 
 ## Como probar
 
-1. Importa `Addon_Items_3D_v1.2.13.mcaddon`.
-2. Activa `Items 3D BP v1.2.13` y `Items 3D RP v1.2.13`.
+1. Importa `Addon_Items_3D_v1.2.22.mcaddon`.
+2. Activa `Items 3D BP v1.2.22` y `Items 3D RP v1.2.22`.
 3. Activa Beta APIs/Script APIs si tu version de Minecraft lo solicita.
 4. Usa:
 
@@ -124,5 +124,5 @@ La regla principal: cada nuevo item debe tener nombre base consistente en BP, RP
 ## Empaquetar
 
 ```powershell
-.\tools\package-addon.ps1 -Version 1.2.13
+.\tools\package-addon.ps1 -Version 1.2.22
 ```

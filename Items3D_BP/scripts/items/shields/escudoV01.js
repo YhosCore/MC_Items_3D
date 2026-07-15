@@ -4,11 +4,10 @@ import { ITEM_IDS, SHIELD_ATTRIBUTES } from "../../utils/constants.js";
 const CONFIG = SHIELD_ATTRIBUTES.ESCUDO_V01;
 const RECENT_DAMAGE_TICKS = 2;
 const recentDamageByPlayer = new Map();
-let runtimeWorld;
 
 export function registerEscudoV01(world) {
-  runtimeWorld = world;
   registerManualDurabilityComponent(world);
+  registerProjectileBlocking(world);
   world.afterEvents.entityHurt.subscribe(handleEntityHurt);
   world.afterEvents.entityHitEntity.subscribe(handleEntityHitEntity);
 }
@@ -27,6 +26,49 @@ function registerManualDurabilityComponent(world) {
   }
 }
 
+function registerProjectileBlocking(world) {
+  system.runInterval(() => {
+    for (const player of world.getPlayers()) {
+      if (!isBlocking(player)) {
+        continue;
+      }
+
+      const equipped = getEquippedShield(player);
+      if (!equipped.item) {
+        continue;
+      }
+
+      const center = { x: player.location.x, y: player.location.y + 0.5, z: player.location.z };
+      const view = player.getViewDirection();
+
+      for (const entity of player.dimension.getEntities()) {
+        if (!entity.hasComponent?.("minecraft:projectile")) {
+          continue;
+        }
+
+        if (getDistance3D(center, entity.location) >= 2) {
+          continue;
+        }
+
+        damageEquippedShield(player, equipped.hand, equipped.item);
+        playShieldSound(player, CONFIG.blockSound);
+
+        try {
+          entity.applyImpulse({ x: view.x * 1.5, y: view.y * 1.5, z: view.z * 1.5 });
+        } catch {
+          // Some projectiles cannot be pushed before removal.
+        }
+
+        try {
+          entity.remove();
+        } catch {
+          // Projectile may already be gone.
+        }
+      }
+    }
+  }, 0);
+}
+
 function handleEntityHurt(event) {
   const player = event.hurtEntity;
 
@@ -42,7 +84,7 @@ function handleEntityHitEntity(event) {
   const player = event.hitEntity;
   const attacker = event.damagingEntity;
 
-  if (!isPlayer(player) || !attacker || !isBlocking(player) || !isInFront(player, attacker.location)) {
+  if (!isPlayer(player) || !attacker || !isBlocking(player) || !isFacingAttacker(player, attacker)) {
     return;
   }
 
@@ -55,6 +97,7 @@ function handleEntityHitEntity(event) {
     restoreBlockedDamage(player);
     damageEquippedShield(player, equipped.hand, equipped.item);
     playShieldSound(player, CONFIG.blockSound);
+    knockBackAttacker(player, attacker);
   });
 }
 
@@ -148,14 +191,36 @@ function playShieldSound(player, sound) {
   }
 }
 
+function knockBackAttacker(player, attacker) {
+  try {
+    const dx = attacker.location.x - player.location.x;
+    const dz = attacker.location.z - player.location.z;
+    attacker.applyKnockback(dx, dz, 1.3, 0.52);
+  } catch {
+    // Knockback is a bonus; blocking should still work.
+  }
+}
+
+function isFacingAttacker(player, attacker) {
+  try {
+    const dy = player.getRotation().y - attacker.getRotation().y;
+    return Math.abs(dy) > 90;
+  } catch {
+    return isInFront(player, attacker.location);
+  }
+}
+
 function isInFront(player, targetLocation) {
   const view = player.getViewDirection();
   const dx = targetLocation.x - player.location.x;
   const dz = targetLocation.z - player.location.z;
   const length = Math.max(Math.hypot(dx, dz), 0.001);
   const dot = view.x * (dx / length) + view.z * (dz / length);
-
   return dot > 0.15;
+}
+
+function getDistance3D(a, b) {
+  return Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z);
 }
 
 function getPlayerKey(player) {
