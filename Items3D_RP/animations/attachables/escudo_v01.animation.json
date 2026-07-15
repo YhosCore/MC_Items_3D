@@ -15,7 +15,7 @@
       "bones": {
         "bone": {
           "rotation": [0, 80, 0],
-          "position": [-4, -13, 0]
+          "position": [-1.5, 0, 0]
         }
       }
     },
@@ -23,8 +23,8 @@
       "loop": true,
       "bones": {
         "bone": {
-          "rotation": [10, 0, 0],
-          "position": [0, -16, -2]
+          "rotation": [5, 0, 0],
+          "position": [0, 1.5, -1.5]
         }
       }
     }
