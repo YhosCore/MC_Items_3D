@@ -18,10 +18,6 @@ export const SHIELD_ATTRIBUTES = {
   ESCUDO_V01: {
     durabilityDamage: 1,
     blockSound: "item.shield.block",
-    breakSound: "random.break",
-    particleId: "minecraft:basic_crit_particle",
-    projectileBlockRadius: 2,
-    attackerKnockbackStrength: 1.25,
-    attackerKnockbackVertical: 0.45
+    breakSound: "random.break"
   }
 };

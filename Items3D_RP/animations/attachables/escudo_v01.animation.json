@@ -4,7 +4,7 @@
     "animation.escudo_v01.first_person_hold": {
       "loop": true,
       "bones": {
-        "shield": {
+        "bone": {
           "rotation": [-228.8272, 404.9198, -348.4465],
           "position": [1, 16, 5]
         }
@@ -13,7 +13,7 @@
     "animation.escudo_v01.third_person_hold": {
       "loop": true,
       "bones": {
-        "shield": {
+        "bone": {
           "rotation": [0, 80, 0],
           "position": [-4, -13, 0]
         }
@@ -22,7 +22,7 @@
     "animation.escudo_v01.blocking_hold": {
       "loop": true,
       "bones": {
-        "shield": {
+        "bone": {
           "rotation": [10, 0, 0],
           "position": [0, -16, -2]
         }

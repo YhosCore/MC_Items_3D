@@ -1,23 +1,23 @@
 {
   "format_version": 2,
   "header": {
-    "name": "Items 3D RP v1.2.10",
-    "description": "Version 1.2.10 - Paquete de recursos para items 3D.",
+    "name": "Items 3D RP v1.2.11",
+    "description": "Version 1.2.11 - Paquete de recursos para items 3D.",
     "uuid": "f523758b-72a7-4c20-96b1-bef9967a533c",
-    "version": [1, 2, 10],
+    "version": [1, 2, 11],
     "min_engine_version": [1, 21, 0]
   },
   "modules": [
     {
       "type": "resources",
       "uuid": "887c79c3-9f4d-4bd4-9290-cdcfce075a52",
-      "version": [1, 2, 10]
+      "version": [1, 2, 11]
     }
   ],
   "dependencies": [
     {
       "uuid": "71c75069-84f9-498c-a3bc-744a03ca14f3",
-      "version": [1, 2, 10]
+      "version": [1, 2, 11]
     }
   ],
   "metadata": {
