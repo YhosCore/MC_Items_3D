@@ -12,14 +12,9 @@
       },
       "bones": [
         {
-          "name": "shield",
-          "pivot": [1, 15.5, 3],
-          "binding": "q.item_slot_to_bone_name(c.item_slot)"
-        },
-        {
-          "name": "bone",
-          "parent": "shield",
+          "name": "root_item",
           "pivot": [0, 0, 0],
+          "binding": "q.item_slot_to_bone_name(c.item_slot)",
           "cubes": [
             { "origin": [-6, 0, 0], "size": [12, 21, 1], "uv": [0, 0] },
             { "origin": [-5, 1, -1], "size": [10, 19, 1], "uv": [0, 22] },
